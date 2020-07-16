@@ -12,7 +12,7 @@ namespace ZhongYue.Example
 {
     public enum UIType
     {
-        Text, Image, RawImage, Button, Toggle
+        Text, Image, RawImage, Button, Toggle, Dropdown
     }
     public class Example_UI : MonoBehaviour
     {
@@ -28,9 +28,11 @@ namespace ZhongYue.Example
         [SerializeField]
         public UnityEngine.UI.Toggle m_Toggle;
 
+        public UnityEngine.UI.Dropdown m_Dropdown;
+
         protected void Start()
         {
-            switch(m_UIType)
+            switch (m_UIType)
             {
                 case UIType.Text:
                     m_Text = this.GetComponent<UnityEngine.UI.Text>();
@@ -49,11 +51,20 @@ namespace ZhongYue.Example
                     m_Button.onClick.AddListener(ButtonOnClick);
                     break;
 
+                case UIType.Dropdown:
+                    m_Dropdown = GetComponent<UnityEngine.UI.Dropdown>();
+                    m_Dropdown.onValueChanged.AddListener(DropdownValueChanged);
+                    break;
+
                 default:
                     break;
             }
         }
 
+        /// <summary> 按钮的点击事件 </summary>
         protected virtual void ButtonOnClick() { }
+
+
+        protected virtual void DropdownValueChanged(int arg0) { }
     }
 }
