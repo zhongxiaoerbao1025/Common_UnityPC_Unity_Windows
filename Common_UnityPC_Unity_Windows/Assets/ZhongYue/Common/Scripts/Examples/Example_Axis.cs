@@ -40,10 +40,34 @@ namespace ZhongYue.Example
         void ViewportToWorldPoint() { }
 
         /// <summary>将位置从:世界空间-->屏幕空间</summary>
-        void WorldToScreenPoint() { }
+        public Vector3 WorldToScreenPoint(Transform target, Camera camera)
+        {
+            if (target != null && camera != null)
+            {
+                Vector3 screenPos = camera.WorldToScreenPoint(target.position);
+                return screenPos;
+            }
+            else
+            {
+                Debug.LogError("位置转换出错!");
+                return Vector3.zero;
+            }
+        }
 
         /// <summary>将位置从:世界空间-->视口空间</summary>
-        void WorldToViewportPoint() { }
+        public Vector3 WorldToViewportPoint(Transform target, Camera camera)
+        {
+            if (target != null && camera != null)
+            {
+                Vector3 viewPos = camera.WorldToViewportPoint(target.position);
+                return viewPos;
+            }
+            else
+            {
+                Debug.LogError("位置转换出错!");
+                return Vector3.zero;
+            }
+        }
 
         /// <summary>
         /// 从相机空间转换为世界空间的矩阵（只读）。
