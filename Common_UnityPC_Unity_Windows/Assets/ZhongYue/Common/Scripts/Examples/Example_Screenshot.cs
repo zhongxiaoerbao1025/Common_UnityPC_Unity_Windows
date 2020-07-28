@@ -58,7 +58,7 @@ namespace ZhongYue.Example
         /// <param name="path">截图文件存储位置</param>
         public virtual void CapruerScreen(string path)
         {
-            ScreenCapture.CaptureScreenshot(path);
+           UnityEngine.ScreenCapture.CaptureScreenshot(path);
         }
     }
 }
