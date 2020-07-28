@@ -10,9 +10,13 @@ namespace ZhongYue.Example
 {
     public class Example_ScreenOrientation : MonoBehaviour
     {
+        [Tooltip("纵向")]
         public bool m_AllowedPortrait = true;
+        [Tooltip("纵向，上下颠倒")]
         public bool m_AllowedPortraitUpsideDown = true;
+        [Tooltip("横向，从纵向逆时针旋转")]
         public bool m_AllowedLandscapeLeft = true;
+        [Tooltip("横向，从纵向顺时针旋转")]
         public bool m_AllowedLandscapeRight = true;
 
         private void Start()

@@ -17,18 +17,27 @@ namespace ZhongYue.Example
     public class Example_UI : MonoBehaviour
     {
         public UIType m_UIType = UIType.Text;
-        [SerializeField]
+        [HideInInspector]
         public UnityEngine.UI.Text m_Text;
-        [SerializeField]
+        [HideInInspector]
         public UnityEngine.UI.Image m_Image;
-        [SerializeField]
+        [HideInInspector]
         public UnityEngine.UI.RawImage m_RawImage;
-        [SerializeField]
+        [HideInInspector]
         public UnityEngine.UI.Button m_Button;
-        [SerializeField]
+        [HideInInspector]
         public UnityEngine.UI.Toggle m_Toggle;
 
+        private UnityEngine.UI.Slider m_Slider;
+
         public UnityEngine.UI.Dropdown m_Dropdown;
+
+        /// <summary> 按钮的点击事件 </summary>
+        protected virtual void ButtonOnClick() { }
+        /// <summary> 事件："切换按钮的值改变时" </summary>
+        protected virtual void ToggleValueChanged(UnityEngine.UI.Toggle change) { }
+        protected virtual void SliderValueChanged(float arg) { }
+        protected virtual void DropdownValueChanged(int arg0) { }
 
         protected void Start()
         {
@@ -51,6 +60,11 @@ namespace ZhongYue.Example
                     m_Button.onClick.AddListener(ButtonOnClick);
                     break;
 
+                case UIType.Toggle:
+                    m_Toggle = this.GetComponent<UnityEngine.UI.Toggle>();
+                    m_Toggle.onValueChanged.AddListener(delegate { ToggleValueChanged(m_Toggle); });
+                    break;
+
                 case UIType.Dropdown:
                     m_Dropdown = GetComponent<UnityEngine.UI.Dropdown>();
                     m_Dropdown.onValueChanged.AddListener(DropdownValueChanged);
@@ -60,11 +74,5 @@ namespace ZhongYue.Example
                     break;
             }
         }
-
-        /// <summary> 按钮的点击事件 </summary>
-        protected virtual void ButtonOnClick() { }
-
-
-        protected virtual void DropdownValueChanged(int arg0) { }
     }
 }
