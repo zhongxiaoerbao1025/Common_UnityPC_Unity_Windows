@@ -5,13 +5,13 @@ namespace zhongYue.SceneController
 {
     public class SceneController_Start : MonoBehaviour
     {
-        public MyEnum.ScenesType m_ScenesType = MyEnum.ScenesType.None;
+        public MyEnum.ScenesName m_ScenesName = MyEnum.ScenesName.Level_A1_Load;
 
-        private void LoadedScene(MyEnum.ScenesType scenesType)
+        private void LoadedScene(MyEnum.ScenesName scenesName)
         {
-            switch (scenesType)
+            switch (scenesName)
             {
-                case MyEnum.ScenesType.Loading:
+                case MyEnum.ScenesName.Level_A1_Load:
                     //StartCoroutine(AsyncLoading((int)MyEnum.ScenesType.Loading));
                     break;
             }

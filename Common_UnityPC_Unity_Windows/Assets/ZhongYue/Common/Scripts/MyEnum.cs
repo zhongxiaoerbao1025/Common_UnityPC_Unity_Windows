@@ -12,10 +12,14 @@ public class MyEnum
         Idle, Shoot, Run, Patrol, Die
     }
 
-    /// <summary> 场景类型 </summary>
-    public enum ScenesType
+    /// <summary> 场景名字 </summary>
+    public enum ScenesName
     {
-        Loading, Error, Connect, Start, Login,
-        None
+        Level_A1_Load,
+        Level_A2_Error,
+        Level_B1_Connect,
+        Level_B2_Start,
+        Level_B3_Login,
+        Level_C1_Main
     }
 }

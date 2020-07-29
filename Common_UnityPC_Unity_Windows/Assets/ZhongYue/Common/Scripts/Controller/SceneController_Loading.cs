@@ -6,7 +6,7 @@ namespace zhongYue.SceneController
 {
     public class SceneController_Loading : MonoBehaviour
     {
-        public MyEnum.ScenesType m_ScenesType = MyEnum.ScenesType.None;
+        public MyEnum.ScenesName m_ScenesName = MyEnum.ScenesName.Level_A1_Load;
 
         public UnityEngine.UI.Image m_ProgressImage;
 
@@ -18,7 +18,7 @@ namespace zhongYue.SceneController
 
         private void Start()
         {
-            LoadedScene(m_ScenesType);
+            LoadedScene(m_ScenesName);
         }
 
         private void Update()
@@ -38,12 +38,12 @@ namespace zhongYue.SceneController
             }
         }
 
-        private void LoadedScene(MyEnum.ScenesType scenesType)
+        private void LoadedScene(MyEnum.ScenesName scenesName)
         {
-            switch (scenesType)
+            switch (scenesName)
             {
-                case MyEnum.ScenesType.Loading:
-                    StartCoroutine(AsyncLoading((int)MyEnum.ScenesType.Loading));
+                case MyEnum.ScenesName.Level_A1_Load:
+                    StartCoroutine(AsyncLoading((int)MyEnum.ScenesName.Level_A1_Load));
                     break;
             }
         }

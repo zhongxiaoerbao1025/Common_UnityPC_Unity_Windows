@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/ZhongYue/Common/Scenes/Levels/Level_A1_Load.unity
+    guid: 66ea56653f88244069dbe85e708c7ec8
+  - enabled: 1
+    path: Assets/ZhongYue/Common/Scenes/Levels/Level_A2_Error.unity
+    guid: 494685510eb4b4ce6b436a2dc1526020
+  - enabled: 1
+    path: Assets/ZhongYue/Common/Scenes/Levels/Level_B1_Connect.unity
+    guid: 26fe36fa5ec374ace9b43c6ca01c1c91
+  - enabled: 1
+    path: Assets/ZhongYue/Common/Scenes/Levels/Level_B2_Start.unity
+    guid: 306ca223f795847399f7a87b7d7ffbe4
+  - enabled: 1
+    path: Assets/ZhongYue/Common/Scenes/Levels/Level_B3_Login.unity
+    guid: c0abd8ce32815434bac7eaf1bed1aa6a
   m_configObjects: {}
